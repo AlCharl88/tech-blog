@@ -10,18 +10,29 @@ const seedComments = require('./comment-seeds');
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 
-  await Comment.bulkCreate(seedComments, {
+  const users = await User.bulkCreate(seedUsers, {
     individualHooks: true,
     returning: true,
   });
-  await Post.bulkCreate(seedPosts, {
+
+  // for (const comment of seedComments) {
+  const comments = await Comment.bulkCreate(seedComments, {
+
     individualHooks: true,
     returning: true,
+    // ...comment,
+    // user_id: users[Math.floor(Math.random() * users.length)].id,
   });
-  await User.bulkCreate(seedUsers, {
+
+// for (const post of seedPosts) {
+  const posts = await Post.bulkCreate(seedPosts, {
+
     individualHooks: true,
     returning: true,
+    // ...post,
+    // user_id: users[Math.floor(Math.random() * users.length)].id,
   });
+  
 
 
     console.log('\n----- DATABASE SYNCED -----\n');

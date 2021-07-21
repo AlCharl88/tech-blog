@@ -25,18 +25,19 @@ Comment.init(
           key: 'id',
         },
       },
-      comment_text: {
+      comment: {
         type: DataTypes.TEXT,
         allowNull: false,
         },
-        date_created: {
-          type: DataTypes.DATE,
-          allowNull: false,
-          defaultValue: DataTypes.NOW,
+      date_created: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW,
         },
   },
   {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'comment'

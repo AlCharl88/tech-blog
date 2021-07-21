@@ -4,10 +4,10 @@ const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth')
 
 router.get('/', async (req, res) => {
-    console.log(req.session);
+    // console.log(req.session);
     
     try { 
-      // Get all post JOIN with user data
+      // Get all posts JOIN with user data
       const dbPostData = await Post.findAll({
       include: [
         {
@@ -15,18 +15,18 @@ router.get('/', async (req, res) => {
          },
           {
             model: User,
-            attributes: ['username', 'twitter', 'github']
+            attributes: ['username']
           }, 
       ],
     });
       //  Serialize data so the template can read it
         const posts = dbPostData.map((post) => post.get({ plain: true }));
-        res.render('homepage', {
+        res.render('/login', {
             posts,
             logged_in: req.session.logged_in
           });
       }catch(err) {
-        console.log(err);
+        // console.log(err);
         res.status(500).json(err);
       };
   });
@@ -38,7 +38,7 @@ router.get('/', async (req, res) => {
         include: [
           {
             model: User,
-            attributes: ['username', 'twitter', 'github']
+            attributes: ['username']
           },
           {
             model: Comment,
@@ -51,7 +51,7 @@ router.get('/', async (req, res) => {
         ],
   });
 
-  console.log(JSON.stringify(dbPostData));
+  // console.log(JSON.stringify(dbPostData));
 
   const post = dbPostData.get({ plain: true });
   res.render('post', {

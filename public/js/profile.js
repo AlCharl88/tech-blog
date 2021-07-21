@@ -42,7 +42,7 @@ const newFormHandler = async (event) => {
     if (event.target.hasAttribute('data-id') && event.target.id === "update-btn") {
       const id = event.target.getAttribute('data-id');
       const title = document.querySelector(`#title-${id}`).value.trim();
-      const contents = document.querySelector(`#post-${id}`).value.trim();
+      const post_content = document.querySelector(`#post-${id}`).value.trim();
      
       console.log(event.target.id);
       const response = await fetch(`api/posts/${id}`, {
