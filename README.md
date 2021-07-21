@@ -4,11 +4,7 @@ The task is to develop a CMS-style blog site similar to a Wordpress site, where 
 
 ## 📝Description
 
-The Tech Blog is a website for writing and posting technical articles.
-Users are welcome to sign up for a free account so they can publish their 
-own articles as well as commenting and giving opinions on articles written 
-by other authors.
-
+The Tech Blog is available for users who want to like to write about tech and pubilsh their wrtting for the whole public. Users are welcome to sign up and post theirs comments.
 
 ## Technologies Used
 
@@ -76,7 +72,7 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 
 
 ## Application Links
-* [Github]()
+* [Github](https://github.com/AlCharl88/tech-blog)
 * [Heroku Live Deployment]()
 
 ## Contact 
