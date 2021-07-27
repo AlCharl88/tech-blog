@@ -4,7 +4,7 @@ The task is to develop a CMS-style blog site similar to a Wordpress site, where 
 
 ## 📝Description
 
-The Tech Blog is available for users who want to like to write about tech and pubilsh their wrtting for the whole public. Users are welcome to sign up and post theirs comments.
+The Tech Blog is available for users who want to write about tech and publish their wrttings for the whole public. Users are welcome to sign up and post theirs comments.
 
 ## Technologies Used
 
